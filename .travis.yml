@@ -147,6 +147,13 @@ install:
     echo "constraints:  sqlite-simple < 0"                       >> cabal.project
     echo "allow-newer:  servant-pagination-2.2.2:servant"        >> cabal.project
     echo "allow-newer:  servant-pagination-2.2.2:servant-server" >> cabal.project
+    echo "allow-newer:  servant-multipart-0.11.5:lens"           >> cabal.project
+    echo "allow-newer:  servant-quickcheck-0.0.8.0:base"         >> cabal.project
+    echo "allow-newer:  servant-quickcheck-0.0.8.0:http-client"  >> cabal.project
+    echo "allow-newer:  servant-quickcheck-0.0.8.0:QuickCheck"   >> cabal.project
+    echo "allow-newer:  servant-quickcheck-0.0.8.0:time"         >> cabal.project
+    echo "allow-newer:  servant-js-0.9.4.1:base"                 >> cabal.project
+    echo "allow-newer:  servant-js-0.9.4.1:lens"                 >> cabal.project
     echo "optimization: False"                                   >> cabal.project
   - "for pkg in $($HCPKG list --simple-output); do echo $pkg | sed 's/-[^-]*$//' | (grep -vE -- '^(cookbook-basic-auth|cookbook-basic-streaming|cookbook-curl-mock|cookbook-db-postgres-pool|cookbook-file-upload|cookbook-generic|cookbook-pagination|cookbook-structuring-apis|cookbook-testing|cookbook-using-custom-monad|cookbook-using-free-client|servant|servant-client|servant-client-core|servant-conduit|servant-docs|servant-foreign|servant-http-streams|servant-machines|servant-pipes|servant-server|tutorial)$' || true) | sed 's/^/constraints: /' | sed 's/$/ installed/' >> cabal.project.local; done"
   - cat cabal.project || true
@@ -244,6 +251,13 @@ script:
     echo "constraints:  sqlite-simple < 0"                       >> cabal.project
     echo "allow-newer:  servant-pagination-2.2.2:servant"        >> cabal.project
     echo "allow-newer:  servant-pagination-2.2.2:servant-server" >> cabal.project
+    echo "allow-newer:  servant-multipart-0.11.5:lens"           >> cabal.project
+    echo "allow-newer:  servant-quickcheck-0.0.8.0:base"         >> cabal.project
+    echo "allow-newer:  servant-quickcheck-0.0.8.0:http-client"  >> cabal.project
+    echo "allow-newer:  servant-quickcheck-0.0.8.0:QuickCheck"   >> cabal.project
+    echo "allow-newer:  servant-quickcheck-0.0.8.0:time"         >> cabal.project
+    echo "allow-newer:  servant-js-0.9.4.1:base"                 >> cabal.project
+    echo "allow-newer:  servant-js-0.9.4.1:lens"                 >> cabal.project
     echo "optimization: False"                                   >> cabal.project
   - "for pkg in $($HCPKG list --simple-output); do echo $pkg | sed 's/-[^-]*$//' | (grep -vE -- '^(cookbook-basic-auth|cookbook-basic-streaming|cookbook-curl-mock|cookbook-db-postgres-pool|cookbook-file-upload|cookbook-generic|cookbook-pagination|cookbook-structuring-apis|cookbook-testing|cookbook-using-custom-monad|cookbook-using-free-client|servant|servant-client|servant-client-core|servant-conduit|servant-docs|servant-foreign|servant-http-streams|servant-machines|servant-pipes|servant-server|tutorial)$' || true) | sed 's/^/constraints: /' | sed 's/$/ installed/' >> cabal.project.local; done"
   - cat cabal.project || true

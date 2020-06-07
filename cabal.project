@@ -62,3 +62,14 @@ write-ghc-environment-files: always
 -- https://github.com/chordify/haskell-servant-pagination/pull/12
 allow-newer: servant-pagination-2.2.2:servant
 allow-newer: servant-pagination-2.2.2:servant-server
+
+-- https://github.com/haskell-servant/servant-multipart/pull/38
+allow-newer: servant-multipart-0.11.5:lens
+-- https://github.com/haskell-servant/servant-quickcheck/pull/70
+allow-newer: servant-quickcheck-0.0.8.0:base
+allow-newer: servant-quickcheck-0.0.8.0:http-client
+allow-newer: servant-quickcheck-0.0.8.0:QuickCheck
+allow-newer: servant-quickcheck-0.0.8.0:time
+-- https://github.com/haskell-servant/servant-js/pull/42
+allow-newer: servant-js-0.9.4.1:base
+allow-newer: servant-js-0.9.4.1:lens
